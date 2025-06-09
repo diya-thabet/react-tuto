@@ -1,5 +1,13 @@
-let name = "Dhia";
+import { useState } from "react";
+
 export default function Header() {
+  console.log("render");
+  const [name, setName] = useState("Dhia");
+  function btnClicked() {
+    if (name === "Dhia") setName("Yamen");
+    else setName("Dhia");
+  }
+
   return (
     <>
       <div
@@ -24,8 +32,4 @@ export default function Header() {
       </button>
     </>
   );
-}
-
-function btnClicked() {
-  name = "yamen";
 }
