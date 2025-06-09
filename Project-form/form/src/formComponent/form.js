@@ -1,9 +1,13 @@
 import "./form.css";
 
 export default function Form() {
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
     <div className="form">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name">name:</label>
         <input type="text" id="name" />
 

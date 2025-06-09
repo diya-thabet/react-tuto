@@ -1,13 +1,11 @@
-/* Apple-light background */
 .form {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f6f6f6; /* near-white */
+  background-color: #f6f6f6;
 }
 
-/* Main form card */
 form {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -19,10 +17,9 @@ form {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), 0 8px 20px rgba(0, 0, 0, 0.08);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", sans-serif;
-  color: #000000; /* Black text */
+  color: #000000;
 }
 
-/* Label text */
 label {
   font-weight: 600;
   font-size: 15px;
@@ -31,7 +28,6 @@ label {
   text-transform: capitalize;
 }
 
-/* Input and select fields */
 input,
 select {
   padding: 12px 14px;
