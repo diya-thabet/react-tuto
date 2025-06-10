@@ -49,7 +49,7 @@ select:focus {
 }
 
 /* Submit button */
-button {
+/*button {
   grid-column: 1 / span 2;
   margin-top: 12px;
   padding: 12px;
@@ -67,3 +67,5 @@ button:hover {
   background-color: #1a1a1a;
   transform: translateY(-1px);
 }
+
+*/

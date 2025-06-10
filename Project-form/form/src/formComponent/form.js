@@ -13,6 +13,7 @@ export default function Form() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    return false;
   }
 
   function handleName(e) {
@@ -55,7 +56,14 @@ export default function Form() {
           <option value="high">High</option>
         </select>
 
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          disabled={(e) => {
+            return handleSubmit(e);
+          }}
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
