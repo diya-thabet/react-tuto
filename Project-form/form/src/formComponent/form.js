@@ -13,6 +13,17 @@ export default function Form() {
 
   function handleSubmit(e) {
     e.preventDefault();
+  }
+
+  function isDisabled() {
+    const dhia = { ...userForm };
+    if (
+      dhia.name === "" ||
+      dhia.number === "" ||
+      dhia.age === "" ||
+      dhia.salary === ""
+    )
+      return true;
     return false;
   }
 
@@ -57,9 +68,9 @@ export default function Form() {
         </select>
 
         <button
-          type="submit"
-          disabled={(e) => {
-            return handleSubmit(e);
+          disabled={isDisabled()}
+          onClick={(e) => {
+            e.preventDefault();
           }}
         >
           Submit
