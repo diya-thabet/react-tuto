@@ -7,6 +7,7 @@ export default function Form() {
     number: "",
     age: "",
     salary: "",
+    employee: false,
   });
 
   console.log(userForm);
@@ -21,7 +22,8 @@ export default function Form() {
       dhia.name === "" ||
       dhia.number === "" ||
       dhia.age === "" ||
-      dhia.salary === ""
+      dhia.salary === "" /*||
+      dhia.employee === false*/
     )
       return true;
     return false;
@@ -52,13 +54,10 @@ export default function Form() {
       <form onSubmit={handleSubmit}>
         <label htmlFor="name">name:</label>
         <input type="text" id="name" onChange={handleName} />
-
         <label htmlFor="number">number:</label>
         <input type="text" id="number" onChange={handleNumber} />
-
         <label htmlFor="age">age:</label>
         <input type="text" id="age" onChange={handleAge} />
-
         <label htmlFor="salary">salary:</label>
         <select id="salary" onChange={handleSalary}>
           <option value="">Select</option>
@@ -66,7 +65,13 @@ export default function Form() {
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
-
+        <input
+          type="checkbox"
+          onChange={(e) => {
+            setForm({ ...userForm, employee: e.target.checked });
+          }}
+        />{" "}
+        are you an employee?
         <button
           disabled={isDisabled()}
           onClick={(e) => {
