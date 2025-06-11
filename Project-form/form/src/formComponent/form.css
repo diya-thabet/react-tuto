@@ -85,20 +85,6 @@ button:disabled {
   border: 1px solid #999;
 }
 
-/* Animation for the form */
-/* Add this to your form.css or a <style> block */
-
-.modal-animate {
+/* .modal-animate {
   animation: fadeScaleIn 0.3s ease-out;
-}
-
-@keyframes fadeScaleIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+} */
