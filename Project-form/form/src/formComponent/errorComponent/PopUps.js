@@ -1,4 +1,5 @@
-import "../form.css";
+//import "../form.css";
+import "./PopUps.css";
 
 export default function PopUps({
   showModal,
@@ -11,8 +12,8 @@ export default function PopUps({
     <>
       <div>
         {showModal && (
-          <div style={overlay}>
-            <div style={modal} className="modal-animate">
+          <div /*style={overlay}*/ className="overlay">
+            <div /*style={modal}*/ className="modal-animate" id="modal">
               {/* submission is ok */}
               {userAge && numberLength && (
                 <>
@@ -55,6 +56,7 @@ export default function PopUps({
   );
 }
 
+/*
 const overlay = {
   position: "fixed",
   top: 0,
@@ -73,4 +75,4 @@ const modal = {
   padding: "20px",
   borderRadius: "8px",
   boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-};
+};*/
