@@ -18,11 +18,11 @@ export default function Form() {
   const [showModal, setShowModal] = useState(false);
   const [numberLength, setNumberLength] = useState(false);
 
-  console.log(userForm);
-  console.log(userAge);
+  // console.log(userForm);
+  // console.log(userAge);
 
-  console.log(userForm.number.length);
-  console.log(numberLength);
+  // console.log(userForm.number.length);
+  // console.log(numberLength);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -66,8 +66,6 @@ export default function Form() {
     setNumberLength(() => {
       return e.target.value.length === 8;
     });
-
-    //console.log(e.target.value);
   }
 
   return (
