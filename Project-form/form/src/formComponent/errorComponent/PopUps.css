@@ -5,7 +5,7 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(8px); /* 👈 blur the background */
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px); /* Safari support */
   display: flex;
   justify-content: center;
