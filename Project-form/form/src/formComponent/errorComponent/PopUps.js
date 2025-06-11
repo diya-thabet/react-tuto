@@ -55,24 +55,3 @@ export default function PopUps({
     </>
   );
 }
-
-/*
-const overlay = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100vw",
-  height: "100vh",
-  backgroundColor: "rgba(0,0,0,0.5)",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};
-
-const modal = {
-  background: "#fff",
-  color: "black",
-  padding: "20px",
-  borderRadius: "8px",
-  boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-};*/
