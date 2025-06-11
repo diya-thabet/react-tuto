@@ -54,53 +54,56 @@ export default function Form() {
   }
 
   return (
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">name:</label>
-        <input type="text" id="name" onChange={handleName} />
-        <label htmlFor="number">number:</label>
-        <input type="text" id="number" onChange={handleNumber} />
-        <label htmlFor="age">age:</label>
-        <input type="text" id="age" onChange={handleAge} />
-        <label htmlFor="salary">salary:</label>
-        <select id="salary" onChange={handleSalary}>
-          <option value="">Select</option>
-          <option value="low">Low</option>
-          <option value="medium">Medium</option>
-          <option value="high">High</option>
-        </select>
-        <input
-          type="checkbox"
-          onChange={(e) => {
-            setForm({ ...userForm, employee: e.target.checked });
-          }}
-        />{" "}
-        are you an employee?
-        <button
-          disabled={isDisabled()}
-          onClick={(e) => {
-            e.preventDefault();
-            setShowModal(true);
-          }}
-        >
-          Submit
-        </button>
-      </form>
+    <>
+      <h1>Requesting a loan</h1>
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">name:</label>
+          <input type="text" id="name" onChange={handleName} />
+          <label htmlFor="number">number:</label>
+          <input type="text" id="number" onChange={handleNumber} />
+          <label htmlFor="age">age:</label>
+          <input type="text" id="age" onChange={handleAge} />
+          <label htmlFor="salary">salary:</label>
+          <select id="salary" onChange={handleSalary}>
+            <option value="">Select</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <input
+            type="checkbox"
+            onChange={(e) => {
+              setForm({ ...userForm, employee: e.target.checked });
+            }}
+          />{" "}
+          are you an employee?
+          <button
+            disabled={isDisabled()}
+            onClick={(e) => {
+              e.preventDefault();
+              setShowModal(true);
+            }}
+          >
+            Submit
+          </button>
+        </form>
 
-      {showModal && (
-        <div style={overlay}>
-          <div style={modal} className="modal-animate">
-            <h2>Submission Successful</h2>
-            <p>Name: {userForm.name}</p>
-            <p>Number: {userForm.number}</p>
-            <p>Age: {userForm.age}</p>
-            <p>Salary: {userForm.salary}</p>
-            <p>Employee: {userForm.employee ? "Yes" : "No"}</p>
-            <button onClick={() => setShowModal(false)}>Close</button>
+        {showModal && (
+          <div style={overlay}>
+            <div style={modal} className="modal-animate">
+              <h2>Submission Successful</h2>
+              <p>Name: {userForm.name}</p>
+              <p>Number: {userForm.number}</p>
+              <p>Age: {userForm.age}</p>
+              <p>Salary: {userForm.salary}</p>
+              <p>Employee: {userForm.employee ? "Yes" : "No"}</p>
+              <button onClick={() => setShowModal(false)}>Close</button>
+            </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }
 
