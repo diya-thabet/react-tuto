@@ -1,5 +1,6 @@
 import "./form.css";
 import { useState } from "react";
+import PopUps from "./errorComponent/PopUps";
 
 export default function Form() {
   //form useState
@@ -11,10 +12,17 @@ export default function Form() {
     employee: false,
   });
 
+  const [userAge, setAge] = useState(false);
+
   //pop up show useState
   const [showModal, setShowModal] = useState(false);
+  const [numberLength, setNumberLength] = useState(false);
 
   console.log(userForm);
+  console.log(userAge);
+
+  console.log(userForm.number.length);
+  console.log(numberLength);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -39,18 +47,27 @@ export default function Form() {
   }
 
   function handleAge(e) {
-    setForm({ ...userForm, age: e.target.value });
-    console.log(e.target.value);
+    const age = Number(e.target.value);
+    setForm({ ...userForm, age: age });
+
+    setAge(age <= 60 && age >= 18 && age !== null);
   }
 
   function handleSalary(e) {
     setForm({ ...userForm, salary: e.target.value });
-    console.log(e.target.value);
+    //console.log(e.target.value);
   }
 
   function handleNumber(e) {
-    setForm({ ...userForm, number: e.target.value });
-    console.log(e.target.value);
+    //const ee = e.target.value;
+    setForm(() => {
+      return { ...userForm, number: e.target.value };
+    });
+    setNumberLength(() => {
+      return e.target.value.length === 8;
+    });
+
+    //console.log(e.target.value);
   }
 
   return (
@@ -60,11 +77,28 @@ export default function Form() {
           <h1>Requesting a loan</h1>
           <form onSubmit={handleSubmit}>
             <label htmlFor="name">name:</label>
-            <input type="text" id="name" onChange={handleName} />
+            <input
+              type="text"
+              id="name"
+              placeholder="full name"
+              onChange={handleName}
+            />
             <label htmlFor="number">number:</label>
-            <input type="text" id="number" onChange={handleNumber} />
+            <input
+              type="text"
+              id="number"
+              onChange={(e) => {
+                handleNumber(e);
+              }}
+              placeholder="phone number"
+            />
             <label htmlFor="age">age:</label>
-            <input type="text" id="age" onChange={handleAge} />
+            <input
+              type="number"
+              id="age"
+              onChange={handleAge}
+              placeholder="age"
+            />
             <label htmlFor="salary">salary:</label>
             <select id="salary" onChange={handleSalary}>
               <option value="">Select</option>
@@ -77,8 +111,8 @@ export default function Form() {
               onChange={(e) => {
                 setForm({ ...userForm, employee: e.target.checked });
               }}
-            />{" "}
-            are you an employee?
+            />
+            {"are you an employee?"}
             <button
               disabled={isDisabled()}
               onClick={(e) => {
@@ -89,41 +123,17 @@ export default function Form() {
               Submit
             </button>
           </form>
+          <PopUps
+            showModal={showModal}
+            userAge={userAge}
+            numberLength={numberLength}
+            userForm={userForm}
+            setShowModal={setShowModal}
+          >
+            {" "}
+          </PopUps>
         </div>
-
-        {showModal && (
-          <div style={overlay}>
-            <div style={modal} className="modal-animate">
-              <h2>Submission Successful</h2>
-              <p>Name: {userForm.name}</p>
-              <p>Number: {userForm.number}</p>
-              <p>Age: {userForm.age}</p>
-              <p>Salary: {userForm.salary}</p>
-              <p>Employee: {userForm.employee ? "Yes" : "No"}</p>
-              <button onClick={() => setShowModal(false)}>Close</button>
-            </div>
-          </div>
-        )}
       </div>
     </>
   );
 }
-
-const overlay = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  width: "100vw",
-  height: "100vh",
-  backgroundColor: "rgba(0,0,0,0.5)",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-};
-
-const modal = {
-  background: "#fff",
-  padding: "20px",
-  borderRadius: "8px",
-  boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
-};
