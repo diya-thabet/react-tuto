@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <>
         <Header></Header>
+        <Header></Header>
         <h1>this is test number one</h1>
       </>
     </div>
