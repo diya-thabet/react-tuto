@@ -5,6 +5,7 @@ export default function Header() {
     <>
       <div className="header">
         <span className="options"></span>
+        <h1>Test</h1>
       </div>
     </>
   );
