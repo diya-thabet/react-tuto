@@ -72,6 +72,11 @@ export default function Form() {
     <>
       <div className="form">
         <div className="titlePlusForm">
+          <img
+            src="logo.png"
+            alt="no logo"
+            style={{ borderRadius: "60px", width: "100px", marginTop: "25px" }}
+          ></img>
           <h1>Requesting a loan</h1>
           <form onSubmit={handleSubmit}>
             <label htmlFor="name">name:</label>
