@@ -16,6 +16,7 @@ function App() {
         <Route path="/hello" element={<Hello />} />
         <Route path="/" element={<Home />} />
         <Route path="/posts" element={<PostList />} />
+
         <Route path="/postDetails/:postId" element={<PostDetails />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
