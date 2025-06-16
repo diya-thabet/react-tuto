@@ -1,34 +1,61 @@
 import "./post.css";
 
-export default function PostList() {
-  return (
-    <>
-      <div className="postBorder">
-        <div className="theFlex">
-          <img
-            src="logo.png"
-            style={{ width: "50px" }}
-            alt="nothing"
-            className="image"
-          />
-          <h4>Post title</h4>
-        </div>
+let posts = [
+  {
+    id: 0,
+    title: "How begin a WW3",
+    body: `begging a war is not easy for beginner , 
+        in this tutorial we gonna teach you how to become the next hitler,
+        the next tito, the next stalin, 
+        Step 1: establish your dictatorship in peasents mind
+        in a way you look like christ for them
+        READMORE...
+        `,
+  },
+  {
+    id: 0,
+    title: "How begin a WW3",
+    body: `begging a war is not easy for beginner , 
+        in this tutorial we gonna teach you how to become the next hitler,
+        the next tito, the next stalin, 
+        Step 1: establish your dictatorship in peasents mind
+        in a way you look like christ for them
+        READMORE...
+        `,
+  },
+  {
+    id: 0,
+    title: "How begin a WW3",
+    body: `begging a war is not easy for beginner , 
+        in this tutorial we gonna teach you how to become the next hitler,
+        the next tito, the next stalin, 
+        Step 1: establish your dictatorship in peasents mind
+        in a way you look like christ for them
+        READMORE...
+        `,
+  },
+];
 
-        <hr></hr>
-        <p className="parapost">
-          this where the content should be, huess what nobody cares about it :)
-          this where the content should be, huess what nobody cares about it :)
-          this where the content should be, huess what nobody cares about it :)
-          this where the content should be, huess what nobody cares about it :)
-          this where the content should be, huess what nobody cares about it :)
-          this where the content should be, huess what nobody cares about it :)
-          this where the content should be, huess what nobody cares about it :)
-          this where the content should be, huess what nobody cares about it :)
-          this where the content should be, huess what nobody cares about it :)
-          this where the content should be, huess what nobody cares about it :)
-          this where the content should be, huess what nobody cares about it :)
-        </p>
-      </div>
-    </>
-  );
+export default function PostList() {
+  const data = posts.map((post) => {
+    return (
+      <>
+        <div className="postBorder">
+          <div className="theFlex">
+            <img
+              src="logo.png"
+              style={{ width: "50px" }}
+              alt="nothing"
+              className="image"
+            />
+            <h4> {post.title} </h4>
+          </div>
+
+          <hr></hr>
+          <p className="parapost">{post.body}</p>
+        </div>
+      </>
+    );
+  });
+  return <>{data}</>;
 }
