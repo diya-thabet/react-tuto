@@ -1,0 +1,19 @@
+.gotohome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.theh1 {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  width: 20%;
+  border-radius: 15px;
+}
+
+.theh1:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
