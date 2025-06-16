@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Hello from "./HelloComponent/Hello";
 import Home from "./HelloComponent/Home";
 import PostList from "./PostComponent/PostList";
+import PostDetails from "./postDetails/postDetails";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
         <Route path="/hello" element={<Hello />} />
         <Route path="/" element={<Home />} />
         <Route path="/posts" element={<PostList />} />
+        <Route path="/postDetails/:postId" element={<PostDetails />} />
+        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
     </div>
   );

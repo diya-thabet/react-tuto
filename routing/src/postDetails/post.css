@@ -1,0 +1,20 @@
+.postBorder {
+  width: 50%;
+  border-radius: 10px;
+  border: solid rgb(0, 0, 0) 3px;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.parapost {
+  margin: 15px;
+}
+
+.theFlex {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  margin-right: 25px;
+}

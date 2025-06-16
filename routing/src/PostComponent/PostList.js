@@ -1,4 +1,5 @@
 import "./post.css";
+import { Link } from "react-router-dom";
 
 let posts = [
   {
@@ -39,7 +40,7 @@ let posts = [
 export default function PostList() {
   const data = posts.map((post) => {
     return (
-      <>
+      <Link key={post.id}>
         <div className="postBorder">
           <div className="theFlex">
             <img
@@ -50,11 +51,8 @@ export default function PostList() {
             />
             <h4> {post.title} </h4>
           </div>
-
-          <hr></hr>
-          <p className="parapost">{post.body}</p>
         </div>
-      </>
+      </Link>
     );
   });
   return <>{data}</>;
