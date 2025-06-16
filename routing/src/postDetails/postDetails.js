@@ -19,7 +19,7 @@ export default function PostDetails() {
           <img
             src="logo.png"
             style={{ width: "50px" }}
-            alt="nothing"
+            alt="nothing here"
             className="image"
           />
           <h4>{p.title}</h4>

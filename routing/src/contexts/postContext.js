@@ -13,7 +13,7 @@ let postsData = [
   },
   {
     id: 1,
-    title: "How begin a WW3",
+    title: "How hitler invaded south germany (france)",
     body: `begging a war is not easy for beginner , 
         in this tutorial we gonna teach you how to become the next hitler,
         the next tito, the next stalin, 
@@ -24,7 +24,7 @@ let postsData = [
   },
   {
     id: 2,
-    title: "How begin a WW3",
+    title: "Heil Hitler",
     body: `begging a war is not easy for beginner , 
         in this tutorial we gonna teach you how to become the next hitler,
         the next tito, the next stalin, 
