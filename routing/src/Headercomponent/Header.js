@@ -7,24 +7,31 @@ export default function Header() {
     <>
       <posts.Provider>
         <div className="header">
-          <img src="logo.png" style={{ width: "50px" }} alt="nothing" />
-          <h1>Fennec</h1>
-
-          <ul className="options">
-            <Link to="./">
-              <button className="option">home</button>
-            </Link>
-            <Link to="./hello">
-              <button className="option">hello</button>
-            </Link>
-            <Link to="./posts">
-              <button className="option">Posts</button>
-            </Link>
-          </ul>
-
-          <hr></hr>
+          <div className="header-brand">
+            <img src="logo.png" className="header-logo" alt="Fennec Logo" />
+            <h1 className="header-title">Fennec</h1>
+          </div>
+          <nav className="header-nav">
+            <ul className="options">
+              <li>
+                <Link to="./" className="nav-link">
+                  <button className="option">Home</button>
+                </Link>
+              </li>
+              <li>
+                <Link to="./hello" className="nav-link">
+                  <button className="option">Hello</button>
+                </Link>
+              </li>
+              <li>
+                <Link to="./posts" className="nav-link">
+                  <button className="option">Posts</button>
+                </Link>
+              </li>
+            </ul>
+          </nav>
         </div>
-        <hr></hr>
+        <div className="header-divider"></div>
       </posts.Provider>
     </>
   );

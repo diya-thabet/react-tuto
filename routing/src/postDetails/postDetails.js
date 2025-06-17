@@ -7,21 +7,25 @@ export default function PostDetails() {
   const postData = useContext(posts);
   const { postId } = useParams();
   const numericPostId = Number(postId); // fix type issue
-
   const p = postData.find((post) => post.id === numericPostId); // using higher order function "find" :)
-
-  if (!p) return <p>Post not found</p>; // in case of invalid ID
-
+  
+  if (!p) {
+    return (
+      <div className="article-error-message">
+        <p>Post with the id: <b>{postId}</b> not found</p>
+      </div>
+    );
+  }
+  
   return (
     <>
-      <div className="postBorder" key={p.id}>
-        <div className="theFlex">
-          
-          <h4>{p.title}</h4>
-        </div>
-        <hr />
-        <p className="parapost">{p.body}</p>
-      </div>
+      <article className="article-container" key={p.id}>
+        <header className="article-header">
+          <h4 className="article-title">{p.title}</h4>
+        </header>
+        <div className="article-divider"></div>
+        <div className="article-content">{p.body}</div>
+      </article>
     </>
   );
 }

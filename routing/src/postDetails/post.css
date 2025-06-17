@@ -1,20 +1,126 @@
-.postBorder {
-  width: 50%;
-  border-radius: 10px;
-  border: solid rgb(0, 0, 0) 3px;
-  margin-left: 50px;
-  margin-top: 50px;
+/* Article/Blog Post CSS - Apple Style */
+
+.article-container {
+  max-width: 800px;
+  width: 90%;
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  margin: 40px auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
 }
 
-.parapost {
-  margin: 15px;
-}
-
-.theFlex {
+.article-header {
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 40px 32px 24px 32px;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
 }
 
-.image {
-  margin-right: 25px;
+.article-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.article-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1) 50%, transparent);
+  margin: 0 32px;
+}
+
+.article-content {
+  margin: 0;
+  padding: 32px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000000;
+  font-weight: 400;
+  letter-spacing: -0.003em;
+}
+
+.article-image {
+  margin-right: 20px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Error message styling */
+.article-error-message {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 18px;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.article-error-message b {
+  font-weight: 600;
+  color: #000000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .article-container {
+    width: 95%;
+    margin: 20px auto;
+    border-radius: 16px;
+  }
+  
+  .article-header {
+    padding: 32px 24px 20px 24px;
+  }
+  
+  .article-title {
+    font-size: 28px;
+  }
+  
+  .article-divider {
+    margin: 0 24px;
+  }
+  
+  .article-content {
+    padding: 24px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .article-container {
+    width: calc(100vw - 20px);
+    margin: 16px auto;
+    border-radius: 12px;
+  }
+  
+  .article-header {
+    padding: 24px 20px 16px 20px;
+  }
+  
+  .article-title {
+    font-size: 24px;
+  }
+  
+  .article-divider {
+    margin: 0 20px;
+  }
+  
+  .article-content {
+    padding: 20px;
+    font-size: 16px;
+  }
+  
+  .article-error-message {
+    padding: 40px 16px;
+    font-size: 16px;
+  }
 }

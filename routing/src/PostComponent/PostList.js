@@ -8,19 +8,23 @@ export default function PostList() {
   const data = postData.map((post) => {
     return (
       <Link key={post.id} to={`/postDetails/${post.id}`}>
-        <div className="postBorder">
+        <div className="postBorderr">
           <div className="theFlex">
-            <img
+            {/* <img
               src="logo.png"
-              style={{ width: "50px" }}
-              alt="nothing"
               className="image"
-            />
-            <h4> {post.title} </h4>
+              alt="Post thumbnail"
+            /> */}
+            <h4>{post.title}</h4>
           </div>
         </div>
       </Link>
     );
   });
-  return <>{data}</>;
+  
+  return (
+    <div className="posts-container">
+      {data}
+    </div>
+  );
 }

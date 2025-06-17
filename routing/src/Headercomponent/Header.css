@@ -1,15 +1,188 @@
+/* Header.css - Apple Style */
+
 .header {
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px 40px;
+  height: 80px;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-brand {
   display: flex;
-  margin: 25px;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .options {
-  justify-content: space-between;
-  margin: 25px;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 12px;
+}
+
+.options li {
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 .option {
-  margin-left: 25px;
+  background: none;
+  border: none;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-family: inherit;
+  text-transform: capitalize;
+  position: relative;
+  letter-spacing: -0.01em;
+}
+
+.option:hover {
+  background-color: #f8f8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+.option:active {
+  background-color: #f0f0f0;
+  transform: translateY(0px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.header-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.06) 50%, transparent);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 16px 24px;
+    height: 70px;
+  }
+  
+  .header-title {
+    font-size: 24px;
+  }
+  
+  .header-nav {
+    justify-content: flex-end;
+  }
+  
+  .options {
+    gap: 8px;
+  }
+  
+  .option {
+    padding: 10px 16px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 16px;
+    height: 60px;
+  }
+  
+  .header-brand {
+    gap: 8px;
+  }
+  
+  .header-logo {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .header-title {
+    font-size: 20px;
+  }
+  
+  .option {
+    padding: 8px 12px;
+    font-size: 15px;
+  }
+}
+
+/* Dark mode support - DISABLED for white background only */
+/*
+@media (prefers-color-scheme: dark) {
+  .header {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .header-title {
+    color: #f5f5f7;
+  }
+  
+  .option {
+    color: #f5f5f7;
+  }
+  
+  .option:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #f5f5f7;
+  }
+  
+  .option:active {
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+  
+  .header-divider {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1) 50%, transparent);
+  }
+}
+*/
+
+/* Focus styles for accessibility */
+.option:focus {
+  outline: 2px solid #0071e3;
+  outline-offset: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .option:focus {
+    outline-color: #0a84ff;
+  }
 }

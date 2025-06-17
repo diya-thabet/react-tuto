@@ -1,3 +1,8 @@
+*{
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+
+}
+
 .App {
   text-align: center;
 }
