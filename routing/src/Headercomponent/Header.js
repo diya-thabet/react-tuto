@@ -9,7 +9,7 @@ export default function Header() {
         <div className="header">
           <div className="header-brand">
             <img src="logo.png" className="header-logo" alt="Fennec Logo" />
-            <h1 className="header-title">Fennec</h1>
+            <p className="header-title">Fennec</p>
           </div>
           <nav className="header-nav">
             <ul className="options">

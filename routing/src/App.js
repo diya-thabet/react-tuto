@@ -6,6 +6,7 @@ import Home from "./HelloComponent/Home";
 import PostList from "./PostComponent/PostList";
 import PostDetails from "./postDetails/postDetails";
 import ErrorNotFound from "./NotFoundComponent/ErrorNotFound";
+import Dhia from "./DhiaComponent/Dhia";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
       {/* Routes */}
 
       <Routes>
-        <Route path="/hello" element={<Hello />} />
+        <Route path="/hello" element={<Hello />} >
+          <Route path="dhia" element={<Dhia/>} />
+        </Route>
         <Route path="/" element={<Home />} />
         <Route path="/posts" element={<PostList />} />
 

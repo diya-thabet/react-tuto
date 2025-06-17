@@ -34,6 +34,8 @@
   color: #000000;
   margin: 0;
   letter-spacing: -0.02em;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+
 }
 
 .header-nav {

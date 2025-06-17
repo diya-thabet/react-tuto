@@ -1,5 +1,7 @@
 import "./hello.css";
 import { Link } from "react-router-dom";
+import { Outlet } from "react-router-dom"
+
 
 export default function Hello() {
   return (
@@ -13,6 +15,10 @@ export default function Hello() {
           </h1>
         </div>
       </Link>
+
+      <div>
+        <Outlet></Outlet>
+      </div>
     </>
   );
 }

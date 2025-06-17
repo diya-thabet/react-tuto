@@ -2,7 +2,7 @@ import { createContext } from "react";
 let postsData = [
   {
     id: 0,
-    title: "How begin a WW3",
+    title: "How to begin a WW3",
     body: `begging a war is not easy for beginner , 
         in this tutorial we gonna teach you how to become the next hitler,
         the next tito, the next stalin, 
