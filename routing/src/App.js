@@ -5,6 +5,7 @@ import Hello from "./HelloComponent/Hello";
 import Home from "./HelloComponent/Home";
 import PostList from "./PostComponent/PostList";
 import PostDetails from "./postDetails/postDetails";
+import ErrorNotFound from "./NotFoundComponent/ErrorNotFound";
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
         <Route path="/posts" element={<PostList />} />
 
         <Route path="/postDetails/:postId" element={<PostDetails />} />
-        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="*" element={ <ErrorNotFound/> } />
       </Routes>
     </div>
   );

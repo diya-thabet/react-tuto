@@ -8,7 +8,7 @@ export default function PostDetails() {
   const { postId } = useParams();
   const numericPostId = Number(postId); // fix type issue
 
-  const p = postData.find((post) => post.id === numericPostId); // cleaner
+  const p = postData.find((post) => post.id === numericPostId); // using higher order function "find" :)
 
   if (!p) return <p>Post not found</p>; // in case of invalid ID
 
@@ -16,12 +16,7 @@ export default function PostDetails() {
     <>
       <div className="postBorder" key={p.id}>
         <div className="theFlex">
-          <img
-            src="logo.png"
-            style={{ width: "50px" }}
-            alt="nothing here"
-            className="image"
-          />
+          
           <h4>{p.title}</h4>
         </div>
         <hr />
